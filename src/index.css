@@ -1,0 +1,160 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+.page{
+    height: 100vh;
+    background-color: azure;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.user_details,.shipping_details,.order_summary, .order_placed{
+    background-color: bisque;
+    padding: 50px;
+    box-shadow: 0px 0px 5px grey;
+    border-radius: 15px;
+}
+
+.user_details h1, .shipping_details h1, .order_summary h1, .order_placed h1{
+    margin-bottom: 20px;
+    font-size: 48px;
+    color: rgb(159, 126, 127);
+    text-align: center;
+}
+
+.order_placed h2{
+    color: cadetblue;
+    margin-bottom: 10px;
+}
+
+.order_placed p{
+    color: brown;
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.user_details label, .shipping_details label{
+    font-size: 24px;
+    color: brown;
+}
+
+.user_details input, .shipping_details input{
+    max-width: 400px;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 18px;
+}
+
+.name_box,.email_box,.number_box,.address_box,.city_box,.postal_code_box{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.user_details button, .shipping_details button, .order_summary button{
+    padding: 12px;
+    border: none;
+    font-size: 20px;
+    background-color: rgb(9, 160, 241);
+    border-radius: 10px;
+    color: white;
+}
+
+.user_details .button_box, .shipping_details .button_box, .order_summary .button_box{
+    display: flex;
+    justify-content: center;
+}
+
+.user_details p, .shipping_details p{
+    color: red;
+}
+
+.item_price_heading{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid grey;
+    font-size: 21px;
+    color: brown;
+    margin-bottom: 10px;
+}
+
+.item_price{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.item_price_left{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    max-width: 250px;
+}
+
+.item_name{
+    font-weight: 500;
+    font-size: 18px;
+    
+}
+
+.item_description{
+    color: grey;
+}
+
+.item_price_right{
+    color: rgba(199, 12, 149, 0.686);
+}
+
+.total_price{
+    text-align: end;
+    border-top: 1px solid black;
+    padding-top: 5px;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: rgb(12, 199, 105);
+}
+
+#submit_button:disabled{
+    background-color: grey;
+}
+
+.spinner {
+  border: 4px solid #f3f3f3; 
+  border-top: 4px solid #3498db; 
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+}
+
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
+.spinner_text{
+  margin-top: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin-left: 20px;
+  transform: translateY(-20%);
+}
+
+
+
+
+
+
+
