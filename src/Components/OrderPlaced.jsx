@@ -20,22 +20,58 @@ const OrderPlaced = () => {
     return () => clearTimeout(timer);
   }, []);
 
-  let totalPrice = 0;
-  cart.forEach((element) => {
-    totalPrice = totalPrice + element.price;
-  });
-  return (
-    isLoading? <LoadingSpinner/>:
+  let totalPrice = cart.reduce(
+    (acc, curr) => acc + curr.quantity * curr.price,
+    0
+  );
+
+  return isLoading ? (
+    <LoadingSpinner />
+  ) : (
     <div className="order_placed">
       <h1>Order Placed Successfully</h1>
-      <h2>Here are your details:</h2>
-      <p>{`Name: ${name}`}</p>
-      <p>{`Email: ${email}`}</p>
-      <p>{`Phone Number: ${number}`}</p>
-      <p>{`Address: ${address}`}</p>
-      <p>{`City: ${city}`}</p>
-      <p>{`Postal Code: ${postal_code}`}</p>
-      <p>{`Amount to be paid: ${totalPrice.toFixed(2)}`}</p>
+      <div className="order_details">
+        <p className="order_details_heading">Order Details:</p>
+        {cart
+          .filter((val) => val.quantity != 0)
+          .map((val) => (
+            <li className="final_item" key={val.id}>
+              <p className="final_item_name">{val.name}</p>
+              <p className="final_item_quantity">{`x ${val.quantity}`}</p>
+              <p className="final_item_price">
+                {(val.price * val.quantity).toFixed(2)}
+              </p>
+            </li>
+          ))}
+        <p className="final_total_price">{`Total Price: ${totalPrice.toFixed(
+          2
+        )}`}</p>
+      </div>
+      <p className="user_details_heading">User Details:</p>
+      <div className="final_name_box">
+        <p className="final_name_heading">Name: </p>
+          <p className="final_name">{ name}</p>
+      </div>
+      <div className="final_email_box">
+        <p className="final_email_heading">Email: </p>
+          <p className="final_email">{ email}</p>
+      </div>
+      <div className="final_number_box">
+        <p className="final_number_heading">Number: </p>
+          <p className="final_number">{ number}</p>
+      </div>
+      <div className="final_address_box">
+        <p className="final_address_heading">Address: </p>
+          <p className="final_address">{ address}</p>
+      </div>
+      <div className="final_city_box">
+          <p className="final_city_heading">City: </p>
+          <p className="final_city">{ city}</p>
+      </div>
+      <div className="final_postal_code_box">
+        <p className="final_postal_code_heading">Postal Code: </p>
+          <p className="final_postal_code">{ postal_code}</p>
+      </div>
     </div>
   );
 };

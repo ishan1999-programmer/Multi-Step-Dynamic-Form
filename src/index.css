@@ -1,149 +1,112 @@
-*{
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
-    font-family: sans-serif;
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  list-style: none;
 }
 
-.page{
-    height: 100vh;
-    background-color: azure;
-    padding: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.page {
+  height: 120vh;
+  background-color: azure;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.user_details,.shipping_details,.order_summary, .order_placed{
-    background-color: bisque;
-    padding: 50px;
-    box-shadow: 0px 0px 5px grey;
-    border-radius: 15px;
+.user_details,
+.shipping_details,
+.order_placed,
+.order_summary {
+  background-color: bisque;
+  padding: 50px;
+  box-shadow: 0px 0px 5px grey;
+  border-radius: 15px;
 }
 
-.user_details h1, .shipping_details h1, .order_summary h1, .order_placed h1{
-    margin-bottom: 20px;
-    font-size: 48px;
-    color: rgb(159, 126, 127);
-    text-align: center;
+.user_details h1,
+.shipping_details h1,
+.order_placed h1,
+.order_summary h1 {
+  margin-bottom: 20px;
+  font-size: 48px;
+  color: rgb(159, 126, 127);
+  text-align: center;
 }
 
-.order_placed h2{
-    color: cadetblue;
-    margin-bottom: 10px;
+
+
+
+
+.user_details label,
+.shipping_details label {
+  font-size: 24px;
+  color: brown;
 }
 
-.order_placed p{
-    color: brown;
-    font-size: 24px;
-    margin-bottom: 5px;
+.user_details input,
+.shipping_details input {
+  max-width: 400px;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 18px;
 }
 
-.user_details label, .shipping_details label{
-    font-size: 24px;
-    color: brown;
+.name_box,
+.email_box,
+.number_box,
+.address_box,
+.city_box,
+.postal_code_box {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 20px;
 }
 
-.user_details input, .shipping_details input{
-    max-width: 400px;
-    border: none;
-    border-radius: 5px;
-    padding: 10px;
-    font-size: 18px;
+.user_details button,
+.shipping_details button,
+.place_order {
+  padding: 12px;
+  border: none;
+  font-size: 20px;
+  background-color: rgb(9, 160, 241);
+  border-radius: 10px;
+  color: white;
 }
 
-.name_box,.email_box,.number_box,.address_box,.city_box,.postal_code_box{
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    margin-bottom: 20px;
+.user_details .button_box,
+.shipping_details .button_box {
+  display: flex;
+  justify-content: center;
 }
 
-.user_details button, .shipping_details button, .order_summary button{
-    padding: 12px;
-    border: none;
-    font-size: 20px;
-    background-color: rgb(9, 160, 241);
-    border-radius: 10px;
-    color: white;
-}
-
-.user_details .button_box, .shipping_details .button_box, .order_summary .button_box{
-    display: flex;
-    justify-content: center;
-}
-
-.user_details p, .shipping_details p{
-    color: red;
-}
-
-.item_price_heading{
-    display: flex;
-    justify-content: space-between;
-    border-bottom: 1px solid grey;
-    font-size: 21px;
-    color: brown;
-    margin-bottom: 10px;
-}
-
-.item_price{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-}
-
-.item_price_left{
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    max-width: 250px;
-}
-
-.item_name{
-    font-weight: 500;
-    font-size: 18px;
-    
-}
-
-.item_description{
-    color: grey;
-}
-
-.item_price_right{
-    color: rgba(199, 12, 149, 0.686);
-}
-
-.total_price{
-    text-align: end;
-    border-top: 1px solid black;
-    padding-top: 5px;
-    margin-bottom: 20px;
-    font-size: 24px;
-    color: rgb(12, 199, 105);
-}
-
-#submit_button:disabled{
-    background-color: grey;
+.user_details p,
+.shipping_details p {
+  color: red;
 }
 
 .spinner {
-  border: 4px solid #f3f3f3; 
-  border-top: 4px solid #3498db; 
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #3498db;
   border-radius: 50%;
   width: 50px;
   height: 50px;
   animation: spin 1s linear infinite;
 }
 
-
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
-
-.spinner_text{
+.spinner_text {
   margin-top: 20px;
   font-size: 24px;
   font-weight: bold;
@@ -152,9 +115,148 @@
   transform: translateY(-20%);
 }
 
+.item_box_heading {
+  display: flex;
+  font-size: 18px;
+  color: brown;
+  gap: 20px;
+  border-bottom: 1px solid grey;
+  margin-bottom: 10px;
+}
+
+.item_heading {
+  width: 250px;
+}
+
+.quantity_heading {
+  width: 80px;
+  text-align: center;
+}
+
+.price_heading {
+  width: 70px;
+  text-align: center;
+}
+
+.total_price {
+  margin-top: 30px;
+  text-align: center;
+  font-size: 24px;
+}
+
+.place_order_button_box {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.item{
+    display: flex;
+    gap: 20px;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid brown;
+}
+
+.item_info{
+    width: 250px;
+}
+
+.item_quantity{
+    width: 80px;
+    text-align: center;
+}
+
+.item_price {
+  width: 70px;
+  text-align: center;
+}
+
+.item_name{
+    font-weight: 600;
+    margin-bottom: 2px;
+}
+
+.item_description{
+    color: grey;
+    margin-bottom: 10px;
+}
+
+.item_quantity_buttons{
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+.item_quantity_buttons p{
+    width: 30px;
+    text-align: center;
+}
+
+.dec_button{
+    border: none;
+    font-size: 21px;
+    border-radius: 10px;
+    background-color: rgba(255, 0, 0, 0.712);
+    padding: 5px 10px;
+}
+
+.inc_button{
+    border: none;
+    font-size: 21px;
+    border-radius: 10px;
+    background-color: rgba(16, 223, 16, 0.612);
+    padding: 5px 10px;
+}
 
 
 
+.place_order:disabled{
+  background-color: grey;
+}
 
+.order_details{
+  border: 1px solid brown;
+  padding: 10px;
+  margin-bottom: 20px;
+}
 
+.order_details_heading, .user_details_heading{
+  font-size: 24px;
+  color: brown;
+  margin-bottom: 10px;
+}
 
+.final_item{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.final_item_name{
+  font-weight: 600;
+  width: 180px;
+}
+
+.final_item_quantity{
+width: 40px;
+text-align: center;
+}
+
+.final_total_price{
+  text-align: center;
+  margin-top: 20px;
+  font-size: 21px;
+  color: rgb(18, 186, 18);
+}
+
+.final_name_box,.final_email_box,.final_number_box,.final_address_box,.final_city_box,.final_postal_code_box{
+  display: flex;
+  gap: 5px;
+  margin-bottom: 5px;
+  align-items: center;
+}
+
+.final_name_heading,.final_email_heading,.final_number_heading,.final_address_heading,.final_city_heading,.final_postal_code_heading{
+font-size: 18px;
+font-weight: 600;
+}
